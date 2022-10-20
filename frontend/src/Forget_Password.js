@@ -3,10 +3,11 @@ import React from 'react';
 import signb from './signb.jpeg'
 import "./style.css";
 
-class Customer_Login extends React.Component {
+class Forget_Password extends React.Component {
     state = {
-        username: '',
-        password: '',
+        q1: '',
+        q2: '',
+        q3: '',
     } 
     render() {
         const myStyle={
@@ -22,48 +23,44 @@ class Customer_Login extends React.Component {
                 <br />
                 <br />
                 <br/>
-                <div className='signUpMainDiv'>
-                    <br/>
-                    <h4 className='mainHead'>
-                        Welcome to FoodGo
-                    </h4>
-                    <span className='mainText'>
-                        Order your Food Instantly!
-                    </span>
-                </div>
-                <div className='loginFormDiv'>
+
+                <div className='forgetDiv'>
                     <form>
                         <br />
                         <br />
-                        <div className='login'>
-                            Log In
+                        <div className='forgetPass'>
+                            Forget Password?
                         </div>
                         <div className='loginheader'>
-                            <span>
-                                now to explore and use the FoodGo
-                            </span>
-                            <br />
                             <div className='innerdiv'>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.name} onChange={this.onChangedName} />
+                                <br />
+                                <span className='info'>
+                                    Please Answer Security Questions
+                                </span>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Password' required type='password' value={this.state.name} onChange={this.onChangedName} />
-
+                                <input className='inputFieldsLarge' placeholder='Enter your the city where you were born' required type='text' value={this.state.name} onChange={this.onChangedName} />
+                                <br />
+                                <br />
+                                <input className='inputFieldsLarge' placeholder='What was the name of your first pet' required type='text' value={this.state.name} onChange={this.onChangedName} />
+                                <br />
+                                <br />
+                                <input className='inputFieldsLarge' placeholder='What was the name of your favouate school teacher' required type='text' value={this.state.name} onChange={this.onChangedName} />
                                 <br />
                                 <br />
                                 <br/>
-                                <input className='signupButton' type='submit' value='Log In' />
+                                <input className='signupButton' type='submit' value='Reset Password' />
                                 <br />
                                 <br />
                                 <div className='loginText'>
                                     <span>
-                                        Can't Log in? | 
+                                        Do You Want to Login Now? | 
                                     </span>
                                     <label>
                                         <a href='#' >
-                                            | Forget Password
+                                            | Log In
                                         </a>
                                     </label>
                                 </div>
@@ -87,4 +84,4 @@ class Customer_Login extends React.Component {
     }
 }
  
-export default Customer_Login;
+export default Forget_Password;

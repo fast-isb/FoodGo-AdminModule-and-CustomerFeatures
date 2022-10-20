@@ -90,7 +90,7 @@ img{
     color: white;
     margin: 8px 0;
     border: none;
-    margin-left: 160px;
+    margin-left: 190px;
     border-radius: 5px;
     cursor: pointer;
     width: 130px;
@@ -104,5 +104,56 @@ img{
 .loginText{
     color: rgb(93, 92, 92);
     font-size: medium;
+    margin-left: 137px;
+}
+
+.loginFormDiv{
+    margin-left: 300px;
+    background-color: rgba(226, 225, 225, 0.567);
+    height: 540px;
+    width: 600px;
+    border-radius: 5px;
+    margin-top: -470px;
+}
+
+.login{
+    font-family: Cursive;
+    color: rgb(93, 92, 92);
+    font-size: x-large;
     margin-left: 110px;
+}
+.loginheader{
+    color: rgb(93, 92, 92);
+    font-size: large;
+    margin-top: -30px;
+    margin-left: 183px;
+}
+
+.forgetDiv{
+    margin-left: 300px;
+    background-color: rgba(226, 225, 225, 0.567);
+    height: 720px;
+    width: 600px;
+    border-radius: 5px;
+    margin-top: -150px;
+}
+.forgetPass{
+    font-family: Cursive;
+    color: rgb(93, 92, 92);
+    font-size: x-large;
+    margin-left: 220px;
+}
+.resPass{
+    font-family: Cursive;
+    color: rgb(93, 92, 92);
+    font-size: x-large;
+    margin-left: 206px;
+}
+.resetDiv{
+    margin-left: 300px;
+    background-color: rgba(226, 225, 225, 0.567);
+    height: 520px;
+    width: 600px;
+    border-radius: 5px;
+    margin-top: -80px; 
 }

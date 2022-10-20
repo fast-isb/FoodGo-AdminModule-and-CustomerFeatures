@@ -4,12 +4,15 @@ import './index.css';
 import App from './App.js';
 import reportWebVitals from './reportWebVitals.js';
 import Test from './test.js';
+import Customer_Signup from './Customer_Signup.js'
 import Customer_Login from './Customer_Login.js'
+import Forget_Password from './Forget_Password.js'
+import Reset_Password from './Reset_Password.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Customer_Login />
+    <Forget_Password />
   </React.StrictMode>
 );
 
