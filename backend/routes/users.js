@@ -20,6 +20,11 @@ router.post('/', (req, res) => {
     res.send(`added into the DB`)
 })
 
+router.post('/name', (req, res) => {
+    console.log(req.body);
+    res.json('name received');
+})
+
 export default router;
 
 // module.exports = router;
