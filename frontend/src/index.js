@@ -4,11 +4,12 @@ import './index.css';
 import App from './App.js';
 import reportWebVitals from './reportWebVitals.js';
 import Test from './test.js';
+import Customer_Login from './Customer_Login.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Test />
+    <Customer_Login />
   </React.StrictMode>
 );
 

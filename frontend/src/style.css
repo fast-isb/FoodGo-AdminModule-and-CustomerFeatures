@@ -1,0 +1,108 @@
+
+img{
+    width: 1800px;
+    height: 1020px ;
+    background-image: true;
+}
+.signUpMainDiv{
+    margin-left: 1260px;
+    background-color: rgba(200, 88, 155, 0.855);
+    height: 400px;
+    width: 535px;
+}
+
+
+.formDiv{
+    margin-left: 300px;
+    background-color: rgba(226, 225, 225, 0.567);
+    height: 920px;
+    width: 600px;
+    border-radius: 5px;
+    margin-top: -650px;
+}
+
+.mainHead{
+    margin-left: 7px;
+    font-family: Cursive;
+    color: rgb(255, 246, 246);
+    
+}
+
+.mainText{
+    font-size:x-large;
+    margin-left: 7px;
+    color: rgb(255, 246, 246);
+}
+.signup{
+    font-family: Cursive;
+    color: rgb(93, 92, 92);
+    font-size: x-large;
+    margin-left: 110px;
+}
+
+.header{
+    color: rgb(93, 92, 92);
+    font-size: large;
+    margin-top: -30px;
+    margin-left: 200px;
+}
+
+.inputFields{
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    background-color: transparent;
+    height: 20px;
+
+}
+
+.inputFieldsLarge{
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    background-color: transparent;
+    height: 20px;
+    width: 320px
+}
+
+.inputFieldsAdd{
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    background-color: transparent;
+    height: 40px;
+    width: 320px
+}
+
+.innerdiv{
+    margin-left: -130px;
+}
+ .info{
+    font-family: Monospace;
+    color: rgb(93, 92, 92);
+    font-size: x-large;
+ }
+
+ .securityText{
+    color: rgb(93, 92, 92);
+    font-size: large;
+ }
+
+ .signupButton{
+    background-color: rgba(13, 103, 17, 0.861);
+    color: white;
+    margin: 8px 0;
+    border: none;
+    margin-left: 160px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+    font-weight: bolder;
+}
+ input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.loginText{
+    color: rgb(93, 92, 92);
+    font-size: medium;
+    margin-left: 110px;
+}

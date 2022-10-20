@@ -3,7 +3,7 @@ import React from 'react';
 
 
 class Test extends React.Component {
-    state = {name : ''} 
+    state = {name : 'zain'} 
     onsubmit = (e) => {
         e.preventDefault();
 
