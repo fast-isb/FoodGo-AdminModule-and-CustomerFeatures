@@ -172,3 +172,75 @@ img{
     width: 600px;
     border-radius: 5px;
 }
+.dem{
+    height: 450px;
+    width: 200px;
+}
+h5{
+    font-family: Cursive;
+    font-size:xx-large;
+}
+#do{
+    width: 80px;
+    border-radius:16px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1; 
+    border: 3px solid  rgba(200, 88, 155, 0.855);
+    background-color: rgb(236, 236, 236);
+}
+#cosc{
+    position: fixed;
+}
+#icons{
+    margin-left: -50px;
+    color: rgb(230, 228, 228);
+}
+ul{
+    margin: 0;
+    padding: 270px;
+    list-style-type:none;
+}
+ul li a:hover{
+    cursor: pointer;
+}
+#div.fix{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    
+    z-index: 9;
+}
+
+.ic{
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+}
+.mainlogo{
+    margin-top: 550px;
+    height: 100px;
+}
+#firstCard{
+    margin-top: 780px;
+    margin-left: 330px;
+    z-index: -1;
+}
+#controller{
+    height: 500px;
+    width: 650px;
+}
+#secondCard{
+    margin-top: -500px;
+    margin-left: 750px;
+    z-index: -1;
+}
+#para{
+    margin-top: 480px;
+    margin-left: 200px;
+    width: 400px;
+    text-align: justify;
+    height: 250px;
+    border-radius: 20px;
+}

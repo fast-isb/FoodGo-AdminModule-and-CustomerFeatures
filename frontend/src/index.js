@@ -9,11 +9,12 @@ import Customer_Login from './Customer_Login.js'
 import Forget_Password from './Forget_Password.js'
 import Reset_Password from './Reset_Password.js'
 import Admin_Login from './Admin_Login.js'
+import Customer_Dashboard from './Customer_Dashboard.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Admin_Login />
+    <Customer_Dashboard />
   </React.StrictMode>
 );
 
