@@ -4,11 +4,14 @@ import signb from './signb.jpeg'
 import "./style.css";
 
 class Customer_Login extends React.Component {
-    state = {
-        username: '',
-        password: '',
-      //  message: '',
-    } 
+    constructor() {
+        super()
+        this.state = {
+            username: '',
+            password: '',
+            message: '',
+        } 
+    }
     onsubmit = e => {
        // e.preventDefault();
         if (this.state.username!=null && this.state.password!=null) {
@@ -81,7 +84,7 @@ class Customer_Login extends React.Component {
                                 <input className='inputFieldsLarge' placeholder='Password' required type='password' value={this.state.password} onChange={this.onChangePassword} />
                                 <br />
                                 <br />
-                                <label value={this.state.message}> </label>  
+                                <label id='errorMessage'>{this.state.message} </label>  
                                 <br/>
                                 <input className='signupButton' type='submit' value='Log In' />
                                 <br />

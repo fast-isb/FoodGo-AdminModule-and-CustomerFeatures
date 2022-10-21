@@ -4,11 +4,15 @@ import signb from './signb.jpeg'
 import "./style.css";
 
 class Forget_Password extends React.Component {
-    state = {
-        q1: '',
-        q2: '',
-        q3: '',
-    } 
+    constructor() {
+        super()
+        this.state = {
+            q1: '',
+            q2: '',
+            q3: '',
+        } 
+    }
+    
     onsubmit = e => {
         e.preventDefault();
         const forgetObj = {

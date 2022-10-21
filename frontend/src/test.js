@@ -3,7 +3,11 @@ import React from 'react';
 
 
 class Test extends React.Component {
-    state = {name : 'zain'} 
+    constructor() {
+        super();
+        this.state = { name: 'zain' };
+    }
+    
     onsubmit = (e) => {
         e.preventDefault();
 

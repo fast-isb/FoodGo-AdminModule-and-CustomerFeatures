@@ -4,10 +4,15 @@ import signb from './signb.jpeg'
 import "./style.css";
 
 class Reset_Password extends React.Component {
-    state = {
-        confirmPassword: '',
-        password: '',
-    } 
+    constructor() {
+        super()
+        this.state = {
+            confirmPassword: '',
+            password: '',
+            message: '',
+        } 
+    }
+    
     onsubmit = e => {
         e.preventDefault();
         if (this.state.password==this.state.confirmPassword) {
@@ -18,6 +23,11 @@ class Reset_Password extends React.Component {
             axios.post('http://localhost:3001/users/name', resetPass)
             .then(res => {
                     console.log(res.data);
+            })
+        }
+        else {
+            this.setState({
+                message: 'confirm password is not matched'
             })
         }
     }
@@ -47,7 +57,7 @@ class Reset_Password extends React.Component {
                 <br/>
 
                 <div className='resetDiv'>
-                    <form>
+                    <form onSubmit={this.onsubmit}>
                         <br />
                         <br />
                         <div className='resPass'>
@@ -69,6 +79,7 @@ class Reset_Password extends React.Component {
                                 <input className='inputFieldsLarge' placeholder='Confirm Password' required type='password' value={this.state.confirmPassword} onChange={this.onChangeConfirmPassword} />
                                 <br />
                                 <br />
+                                <label id='errorMessage'>{this.state.message} </label>  
                                 <br />
                                 <input className='signupButton' type='submit' value='Reset Password' />
                                 

@@ -4,18 +4,26 @@ import signb from './signb.jpeg'
 import "./style.css";
 
 class Customer_Signup extends React.Component {
-    state = {
-        fname: '',
-        lname: '',
-        address: '',
-        phone: '',
-        q1: '',
-        q2: '',
-        q3: '',
-        email: '',
-        username: '',
-        password: '',
-    } 
+    constructor() {
+        super()
+        this.state = {
+            fname: '',
+            lname: '',
+            address: '',
+            phone: '',
+            q1: '',
+            q2: '',
+            q3: '',
+            email: '',
+            username: '',
+            password: '',
+            mf: '',
+            ml: '',
+            mph: '',
+            mu: '',
+        } 
+    }
+    
     onsubmit = e => {
         e.preventDefault();
         
@@ -41,8 +49,22 @@ class Customer_Signup extends React.Component {
                         console.log(res.data)
                     })    
                 }
-               
+               else {
+                    this.setState({
+                        mph:'Invalid Phone Number'
+                    })
+                }
             }
+            else {
+                this.setState({
+                    ml:'Last name should not contain any Number'
+                })
+            }
+        }
+        else {
+            this.setState({
+                mf:'First name should not contain any Number'
+            })
         }
     }
     onChangeUserName = e => {
@@ -138,12 +160,15 @@ class Customer_Signup extends React.Component {
                                 <br />
                                 <br />
                                 <input className='inputFields' placeholder='First Name' required type='text' value={this.state.fname} onChange={this.onChangefname} />
+                                <label id='errorMessage' className='erroeMessageGroup'>{this.state.mf} </label>  
                                 <br />
                                 <br />
                                 <input className='inputFields' placeholder='Last Name' required type='text' value={this.state.lname} onChange={this.onChangelname} />
+                                <label id='errorMessage' className='erroeMessageGroup'>{this.state.ml} </label>  
                                 <br />
                                 <br />
                                 <input className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.username} onChange={this.onChangeUserName} />
+                                <label id='errorMessage' className='erroeMessageGroup'>{this.state.mu} </label>  
                                 <br />
                                 <br />
                                 <input className='inputFieldsLarge' placeholder='Password' required type='password' minlength="6" value={this.state.password} onChange={this.onChangePassword} />
@@ -153,6 +178,7 @@ class Customer_Signup extends React.Component {
                                 <br />
                                 <br />
                                 <input className='inputFieldsLarge' placeholder='Phone' required type='tel' minlength="11" maxlength="11" value={this.state.phone} onChange={this.onChangePhone} />
+                                <label id='errorMessage' className='erroeMessageGroup'>{this.state.mph} </label>  
                                 <br />
                                 <br />
                                 <input className='inputFieldsAdd' placeholder='Address' required type='text' value={this.state.address} onChange={this.onChangeAddress} />

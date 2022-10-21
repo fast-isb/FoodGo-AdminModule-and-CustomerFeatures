@@ -157,3 +157,10 @@ img{
     border-radius: 5px;
     margin-top: -80px; 
 }
+#errorMessage{
+    color: red;
+    font-size: small;
+}
+.erroeMessageGroup{
+    margin-left: 15px;
+}
