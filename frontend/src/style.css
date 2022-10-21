@@ -164,3 +164,11 @@ img{
 .erroeMessageGroup{
     margin-left: 15px;
 }
+
+.adminLogin{
+    margin-left: 575px;
+    background-color: rgba(226, 225, 225, 0.567);
+    height: 420px;
+    width: 600px;
+    border-radius: 5px;
+}
