@@ -7,7 +7,36 @@ class Customer_Login extends React.Component {
     state = {
         username: '',
         password: '',
+      //  message: '',
     } 
+    onsubmit = e => {
+       // e.preventDefault();
+        if (this.state.username!=null && this.state.password!=null) {
+         
+            const loginObject = {
+                userName: this.state.username,
+                userPassword: this.state.password,
+            }
+            //console.log(this.state.name);
+
+            axios.post('http://localhost:3001/users/login', loginObject)
+            .then(res => {
+                console.log(res.data)
+            })
+        }
+    }
+    onChangeUserName = e => {
+        this.setState({
+            username: e.target.value
+        })
+    }
+
+    onChangePassword = e => {
+        this.setState({
+            password: e.target.value
+        })
+    }
+    
     render() {
         const myStyle={
             backgroundImage: `url(${signb})` ,
@@ -32,7 +61,7 @@ class Customer_Login extends React.Component {
                     </span>
                 </div>
                 <div className='loginFormDiv'>
-                    <form>
+                    <form onSubmit={this.onsubmit}>
                         <br />
                         <br />
                         <div className='login'>
@@ -46,13 +75,13 @@ class Customer_Login extends React.Component {
                             <div className='innerdiv'>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.username} onChange={this.onChangeUserName} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Password' required type='password' value={this.state.name} onChange={this.onChangedName} />
-
+                                <input className='inputFieldsLarge' placeholder='Password' required type='password' value={this.state.password} onChange={this.onChangePassword} />
                                 <br />
                                 <br />
+                                <label value={this.state.message}> </label>  
                                 <br/>
                                 <input className='signupButton' type='submit' value='Log In' />
                                 <br />

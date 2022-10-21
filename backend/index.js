@@ -8,7 +8,7 @@ import express from 'express'; // <-- Module Style import
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import { } from "dotenv/config";
+//import { } from "dotenv/config";
 mongoose.connect('mongodb+srv://zain:Zain03047003007@zayn.tfuw9ka.mongodb.net/Zayn?retryWrites=true&w=majority',{
     useNewUrlParser: true,
 });

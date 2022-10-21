@@ -12,7 +12,7 @@ import Reset_Password from './Reset_Password.js'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Forget_Password />
+    <Customer_Signup />
   </React.StrictMode>
 );
 

@@ -16,6 +16,85 @@ class Customer_Signup extends React.Component {
         username: '',
         password: '',
     } 
+    onsubmit = e => {
+        e.preventDefault();
+        
+        if (!(/\d/.test(this.state.fname))) {
+            if (!(/\d/.test(this.state.lname))) {
+                if (/^\d+$/.test(this.state.phone)) {
+                    const signUpObject = {
+                        fName: this.state.fname,
+                        lName: this.state.lname,
+                        Phone: this.state.phone,
+                        Address: this.state.address,
+                        Q1: this.state.q1,
+                        Q2: this.state.q2,
+                        Q3: this.state.q3,
+                        Email: this.state.email,
+                        userName: this.state.username,
+                        userPassword: this.state.password,
+                    }
+                    //console.log(this.state.username);
+
+                    axios.post('http://localhost:3001/users/login', signUpObject)
+                    .then(res => {
+                        console.log(res.data)
+                    })    
+                }
+               
+            }
+        }
+    }
+    onChangeUserName = e => {
+        this.setState({
+            username: e.target.value
+        })
+    }
+    onChangefname = e => {
+        this.setState({
+            fname: e.target.value
+        })
+    }
+    onChangelname = e => {
+        this.setState({
+            lname: e.target.value
+        })
+    }
+    onChangePhone = e => {
+        this.setState({
+            phone: e.target.value
+        })
+    }
+    onChangePassword = e => {
+        this.setState({
+            password: e.target.value
+        })
+    }
+    onChangeEmail = e => {
+        this.setState({
+            email: e.target.value
+        })
+    }
+    onChangeAddress = e => {
+        this.setState({
+            address: e.target.value
+        })
+    }
+    onChangeQ1 = e => {
+        this.setState({
+            q1: e.target.value
+        })
+    }
+    onChangeQ2 = e => {
+        this.setState({
+            q2: e.target.value
+        })
+    }
+    onChangeQ3 = e => {
+        this.setState({
+            q3: e.target.value
+        })
+    }
     render() {
         const myStyle={
             backgroundImage: `url(${signb})` ,
@@ -40,7 +119,7 @@ class Customer_Signup extends React.Component {
                     </span>
                 </div>
                 <div className='formDiv'>
-                    <form>
+                    <form onSubmit={this.onsubmit}>
                         <br/>
                         <div className='signup'>
                             Sign Up
@@ -58,25 +137,25 @@ class Customer_Signup extends React.Component {
                                 </span>
                                 <br />
                                 <br />
-                                <input className='inputFields' placeholder='First Name' required type='text' value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFields' placeholder='First Name' required type='text' value={this.state.fname} onChange={this.onChangefname} />
                                 <br />
                                 <br />
-                                <input className='inputFields' placeholder='Last Name' required type='text' value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFields' placeholder='Last Name' required type='text' value={this.state.lname} onChange={this.onChangelname} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.username} onChange={this.onChangeUserName} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Password' required type='password' minlength="6" value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFieldsLarge' placeholder='Password' required type='password' minlength="6" value={this.state.password} onChange={this.onChangePassword} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Email' required type='email' value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFieldsLarge' placeholder='Email' required type='email' value={this.state.email} onChange={this.onChangeEmail} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Phone' required type='tel' minlength="11" maxlength="11" value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFieldsLarge' placeholder='Phone' required type='tel' minlength="11" maxlength="11" value={this.state.phone} onChange={this.onChangePhone} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsAdd' placeholder='Address' required type='text' value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFieldsAdd' placeholder='Address' required type='text' value={this.state.address} onChange={this.onChangeAddress} />
                                 <br />
                                 <br />
                                 <br />
@@ -85,13 +164,13 @@ class Customer_Signup extends React.Component {
                                 </span>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Enter your the city where you were born' required type='text' value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFieldsLarge' placeholder='Enter your the city where you were born' required type='text' value={this.state.q1} onChange={this.onChangeQ1} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='What was the name of your first pet' required type='text' value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFieldsLarge' placeholder='What was the name of your first pet' required type='text' value={this.state.q2} onChange={this.onChangeQ2} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='What was the name of your favouate school teacher' required type='text' value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFieldsLarge' placeholder='What was the name of your favouate school teacher' required type='text' value={this.state.q3} onChange={this.onChangeQ3} />
                                 <br />
                                 <br />
                                 <br />

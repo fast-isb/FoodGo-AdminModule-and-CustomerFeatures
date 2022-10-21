@@ -8,6 +8,29 @@ class Reset_Password extends React.Component {
         confirmPassword: '',
         password: '',
     } 
+    onsubmit = e => {
+        e.preventDefault();
+        if (this.state.password==this.state.confirmPassword) {
+            const resetPass = {
+                Password: this.state.password,
+            }
+            //console.log(this.state.name);
+            axios.post('http://localhost:3001/users/name', resetPass)
+            .then(res => {
+                    console.log(res.data);
+            })
+        }
+    }
+    onChangePassword = e => {
+        this.setState({
+            password: e.target.value
+        })
+    }
+    onChangeConfirmPassword = e => {
+        this.setState({
+            confirmPassword: e.target.value
+        })
+    }
     render() {
         const myStyle={
             backgroundImage: `url(${signb})` ,
@@ -40,13 +63,13 @@ class Reset_Password extends React.Component {
                                 </span>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='New Password' required type='password' minlength="6" value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFieldsLarge' placeholder='New Password' required type='password' minlength="6" value={this.state.password} onChange={this.onChangePassword} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Confirm Password' required type='password' value={this.state.name} onChange={this.onChangedName} />
+                                <input className='inputFieldsLarge' placeholder='Confirm Password' required type='password' value={this.state.confirmPassword} onChange={this.onChangeConfirmPassword} />
                                 <br />
                                 <br />
-                                <br/>
+                                <br />
                                 <input className='signupButton' type='submit' value='Reset Password' />
                                 
                             </div>

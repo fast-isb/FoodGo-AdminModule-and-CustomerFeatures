@@ -17,7 +17,6 @@ class Test extends React.Component {
             .then(res => {
                 console.log(res.data);
         })
-
     }
 
     onChangedName = (e) => {
