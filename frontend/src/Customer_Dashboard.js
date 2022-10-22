@@ -155,11 +155,10 @@ class Customer_Dashboard extends React.Component {
                                     <Button variant="primary">Search Now</Button>
                                 </Card.Body>
                             </Card>     
+                            <br/>
                         </div>
                     </div>
                 </div>
-                                            
-                    
             </div>
         );
     }

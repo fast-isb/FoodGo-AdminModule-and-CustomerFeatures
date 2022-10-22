@@ -9,13 +9,13 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
 //import { } from "dotenv/config";
-mongoose.connect('mongodb+srv://zain:Zain03047003007@zayn.tfuw9ka.mongodb.net/Zayn?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://zain:Zain03047003007@cluster0.c2tcxc7.mongodb.net/?retryWrites=true&w=majority',{
     useNewUrlParser: true,
 });
 
 
 // Importing user route
-import router from './routes/users.js';
+import router from './routes/customer.js';
 // const router = require('router')
 
 // const bodyParser = require('body-parser')
@@ -26,7 +26,7 @@ const port = 3001
 app.use(bodyParser.json())
 app.use(cors());
 // Adding a Router
-app.use('/users', router);
+app.use('/customer', router);
 
 app.get('/', (req, res) => {
     res.send('Hello Universe!')

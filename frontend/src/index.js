@@ -14,7 +14,7 @@ import Customer_Dashboard from './Customer_Dashboard.js'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Customer_Dashboard />
+    <Customer_Signup />
   </React.StrictMode>
 );
 

@@ -59,7 +59,6 @@ class Forget_Password extends React.Component {
                 <div className='forgetDiv'>
                     <form onSubmit={this.onsubmit}>
                         <br />
-                        <br />
                         <div className='forgetPass'>
                             Forget Password?
                         </div>
@@ -83,7 +82,7 @@ class Forget_Password extends React.Component {
                                 <br />
                                 <br />
                                 <br/>
-                                <input className='signupButton' type='submit' value='Reset Password' />
+                                <input className='signupButton' type='submit' value='Continue' />
                                 <br />
                                 <br />
                                 <div className='loginText'>

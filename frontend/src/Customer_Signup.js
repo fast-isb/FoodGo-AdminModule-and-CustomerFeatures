@@ -44,7 +44,7 @@ class Customer_Signup extends React.Component {
                     }
                     //console.log(this.state.username);
 
-                    axios.post('http://localhost:3001/users/login', signUpObject)
+                    axios.post('http://localhost:3001/customer/signup', signUpObject)
                     .then(res => {
                         console.log(res.data)
                     })    
@@ -152,7 +152,6 @@ class Customer_Signup extends React.Component {
                             </span>
                             <br />
                             <br />
-                            <br />
                             <div className='innerdiv'>
                                 <span className='info'>
                                     Your Info
@@ -184,7 +183,6 @@ class Customer_Signup extends React.Component {
                                 <input className='inputFieldsAdd' placeholder='Address' required type='text' value={this.state.address} onChange={this.onChangeAddress} />
                                 <br />
                                 <br />
-                                <br />
                                 <span className='info'>
                                     Security Questions
                                 </span>
@@ -197,7 +195,6 @@ class Customer_Signup extends React.Component {
                                 <br />
                                 <br />
                                 <input className='inputFieldsLarge' placeholder='What was the name of your favouate school teacher' required type='text' value={this.state.q3} onChange={this.onChangeQ3} />
-                                <br />
                                 <br />
                                 <br />
                                 <input className='signupButton' type='submit' value='Sign UP' />

@@ -54,11 +54,9 @@ class Reset_Password extends React.Component {
                 <br />
                 <br />
                 <br />
-                <br/>
 
                 <div className='resetDiv'>
                     <form onSubmit={this.onsubmit}>
-                        <br />
                         <br />
                         <div className='resPass'>
                             Reset Password Now
@@ -81,7 +79,7 @@ class Reset_Password extends React.Component {
                                 <br />
                                 <label id='errorMessage'>{this.state.message} </label>  
                                 <br />
-                                <input className='signupButton' type='submit' value='Reset Password' />
+                                <input className='signupButton' type='submit' value='Reset' />
                                 
                             </div>
                         </div>

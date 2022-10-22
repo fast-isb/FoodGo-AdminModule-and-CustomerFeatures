@@ -18,7 +18,7 @@ img{
     height: 920px;
     width: 600px;
     border-radius: 5px;
-    margin-top: -650px;
+    margin-top: -710px;
 }
 
 .mainHead{
@@ -34,6 +34,7 @@ img{
     color: rgb(255, 246, 246);
 }
 .signup{
+    margin-top: -50px;
     font-family: Cursive;
     color: rgb(93, 92, 92);
     font-size: x-large;
@@ -132,10 +133,10 @@ img{
 .forgetDiv{
     margin-left: 300px;
     background-color: rgba(226, 225, 225, 0.567);
-    height: 720px;
+    height: 680px;
     width: 600px;
     border-radius: 5px;
-    margin-top: -150px;
+    margin-top: -220px;
 }
 .forgetPass{
     font-family: Cursive;

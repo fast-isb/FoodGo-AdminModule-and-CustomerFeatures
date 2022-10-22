@@ -66,7 +66,6 @@ class Customer_Login extends React.Component {
                 <div className='loginFormDiv'>
                     <form onSubmit={this.onsubmit}>
                         <br />
-                        <br />
                         <div className='login'>
                             Log In
                         </div>
