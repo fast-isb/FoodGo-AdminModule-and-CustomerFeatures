@@ -1,15 +1,16 @@
-import express from 'express';
+import express, { json } from 'express';
 
 // const express = require('express');
 const router = express.Router();
 import customer from '../models/Customer.model.js'
 
 router.get('/', (req, res) => {
-    res.send(users)
+    var cus = customer.find().
+    res.send(cu)
+    
 })
 
 router.post('/signup', (req, res) => {
-
     const fName = req.body.fName
     const lName = req.body.lName
     const Phone= req.body.Phone
@@ -20,7 +21,6 @@ router.post('/signup', (req, res) => {
     const Email = req.body.Email
     const userName = req.body.userName
     const userPassword = req.body.userPassword
-
     const newCustomer = new customer({
         fName,
         lName,
@@ -34,9 +34,10 @@ router.post('/signup', (req, res) => {
         userPassword
     })
     newCustomer.save().then(() => {
-        res.json('Your application has been sent')
+        res.json('sent')
+    }).catch(() => {
+        res.json('exist')
     })
-    
 })
 
 router.post('/name', (req, res) => {

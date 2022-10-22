@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import signb from './signb.jpeg'
-import "./style.css";
+import signb from '../images/signb.jpeg'
+import "../style.css";
 import { Link } from "react-router-dom";
 
 class Customer_Signup extends React.Component {
@@ -25,9 +25,7 @@ class Customer_Signup extends React.Component {
         } 
     }
     
-    onsubmit = e => {
-        e.preventDefault();
-        
+    onsubmit = async e => {
         if (!(/\d/.test(this.state.fname))) {
             if (!(/\d/.test(this.state.lname))) {
                 if (/^\d+$/.test(this.state.phone)) {
@@ -45,9 +43,17 @@ class Customer_Signup extends React.Component {
                     }
                     //console.log(this.state.username);
 
-                    axios.post('http://localhost:3001/customer/signup', signUpObject)
+                    const status= await axios.post('http://localhost:3001/customer/signup', signUpObject)
                     .then(res => {
-                        console.log(res.data)
+                        if (res.data == 'exist') {
+                            e.preventDefault();
+                            this.setState({
+                                mu:'This Username already exists'
+                            })
+                        }
+                        else {
+                            alert("Your Application has been submited! You can be able to login once admin approve your request")
+                        }
                     })    
                 }
                else {
@@ -131,8 +137,9 @@ class Customer_Signup extends React.Component {
                 <br />
                 <br />
                 <br />
-                <br/>
+
                 <div className='signUpMainDiv'>
+                    <br />
                     <br/>
                     <h4 className='mainHead'>
                         Welcome to FoodGo
@@ -141,6 +148,7 @@ class Customer_Signup extends React.Component {
                         Order your Food Instantly!
                     </span>
                 </div>
+                <br/>
                 <div className='formDiv'>
                     <form onSubmit={this.onsubmit}>
                         <br/>
@@ -189,13 +197,13 @@ class Customer_Signup extends React.Component {
                                 </span>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Enter your the city where you were born' required type='text' value={this.state.q1} onChange={this.onChangeQ1} />
+                                <input className='inputFieldsLarge' placeholder='Enter your city where you were born' required type='text' value={this.state.q1} onChange={this.onChangeQ1} />
                                 <br />
                                 <br />
                                 <input className='inputFieldsLarge' placeholder='What was the name of your first pet' required type='text' value={this.state.q2} onChange={this.onChangeQ2} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='What was the name of your favouate school teacher' required type='text' value={this.state.q3} onChange={this.onChangeQ3} />
+                                <input className='inputFieldsLarge' placeholder='Who was your favourite school teacher' required type='text' value={this.state.q3} onChange={this.onChangeQ3} />
                                 <br />
                                 <br />
                                 <input className='signupButton' type='submit' value='Sign UP' />

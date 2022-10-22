@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React from 'react';
-import p1 from './slide3.webp'
-import p2 from './p3.png'
-import p3 from './slide1.jpg'
-import rest from './rest.jpeg'
+import p1 from '../images/slide3.webp'
+import p2 from '../images/p3.png'
+import p3 from '../images/slide1.jpg'
+import rest from '../images/rest.jpeg'
 import SideBar from './SideBar.js';
-import food from './food.jpg'
-import "./style.css";
+import food from '../images/food.jpg'
+import "../style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
@@ -14,6 +14,8 @@ import { Carousel } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+
 class Customer_Dashboard extends React.Component {
     constructor() {
         super()
@@ -81,7 +83,6 @@ class Customer_Dashboard extends React.Component {
                             <br />
                             <br />
                             <br />
-
                             <br />
                             <br />
                             <h2>

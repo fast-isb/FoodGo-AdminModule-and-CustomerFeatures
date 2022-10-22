@@ -1,15 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import App from './App.js'
 import reportWebVitals from './reportWebVitals.js'
-import Test from './test.js'
-import Customer_Signup from './Customer_Signup.js'
-import Customer_Login from './Customer_Login.js'
-import Forget_Password from './Forget_Password.js'
-import Reset_Password from './Reset_Password.js'
-import Admin_Login from './Admin_Login.js'
-import Customer_Dashboard from './Customer_Dashboard.js'
+import Customer_Signup from './customer_module/Customer_Signup.js'
+import Customer_Login from './customer_module/Customer_Login.js'
+import Forget_Password from './customer_module/Forget_Password.js'
+import Reset_Password from './customer_module/Reset_Password.js'
+import Admin_Login from './admin_module/Admin_Login.js'
+import Customer_Dashboard from './customer_module/Customer_Dashboard.js'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 

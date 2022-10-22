@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import signb from './signb.jpeg'
-import "./style.css";
+import signb from '../images/signb.jpeg'
+import "../style.css";
 import { Link } from "react-router-dom";
 
 

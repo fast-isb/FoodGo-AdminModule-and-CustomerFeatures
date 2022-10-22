@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React from 'react';
-import logout from './logout.svg'
-import person from './person.svg'
-import wallet from './wallet2.svg'
-import cart from './cart4.svg'
-import home from './house.svg'
-import history from './clock-history.svg'
-import status from './status.png'
-import "./style.css";
+import logout from '../images/logout.svg'
+import person from '../images/person.svg'
+import wallet from '../images/wallet2.svg'
+import cart from '../images/cart4.svg'
+import home from '../images/house.svg'
+import history from '../images/clock-history.svg'
+import status from '../images/status.png'
+import "../style.css";
 import { Link } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';

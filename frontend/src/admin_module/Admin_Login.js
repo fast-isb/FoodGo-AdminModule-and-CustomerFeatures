@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import "./style.css";
+import "../style.css";
 
 class Admin_Login extends React.Component {
     constructor() {
