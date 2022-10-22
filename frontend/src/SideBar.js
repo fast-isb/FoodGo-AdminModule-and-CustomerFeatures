@@ -8,6 +8,8 @@ import home from './house.svg'
 import history from './clock-history.svg'
 import status from './status.png'
 import "./style.css";
+import { Link } from "react-router-dom";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class SideBar extends React.Component {
@@ -30,45 +32,45 @@ class SideBar extends React.Component {
                             <ul>
                                 <br/>
                                 <li>
-                                    <a className='nav-link px-2' id= 'icons'>
+                                    <Link to = '/customer/profile' className='nav-link px-2' id= 'icons'>
                                         <i className='bi-house'/> <img className='ic' src={person}/>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <br />
                                 <li>
-                                    <a className='nav-link px-2' id= 'icons'>
+                                    <Link to='/customer/cart' className='nav-link px-2' id= 'icons'>
                                         <i className='bi-house'/> <img className='ic' src={cart}/>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <br />
                                 <li>
-                                    <a className='nav-link px-2' id= 'icons'>
+                                    <Link to='/customer/status' className='nav-link px-2' id= 'icons'>
                                         <i className='bi-house'/> <img className='ic' src={status}/>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <br/>
                                 <li>
-                                    <a className='nav-link px-2' id= 'icons'>
+                                    <Link to='/customer/dashboard' className='nav-link px-2' id= 'icons'>
                                         <i className='bi-house'/> <img className='ic' src={home}/>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <br/>
                                 <li>
-                                    <a className='nav-link px-2' id= 'icons'>
+                                    <Link to= '/customer/wallet' className='nav-link px-2' id= 'icons'>
                                         <i className='bi-house'/> <img className='ic' src={wallet}/>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <br />
                                 <li>
-                                    <a className='nav-link px-2' id= 'icons'>
+                                    <Link to='/customer/history' className='nav-link px-2' id= 'icons'>
                                         <i className='bi-house'/> <img className='ic' src={history}/>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <br/>
                                 <li>
-                                    <a className='nav-link px-2' id= 'icons' href='#'>
+                                    <Link to='/customer/login' className='nav-link px-2' id= 'icons' href='#'>
                                         <i className='BsTextareaT'/> <img className='ic' src={logout}/>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

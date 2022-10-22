@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import signb from './signb.jpeg'
 import "./style.css";
+import { Link } from "react-router-dom";
 
 class Customer_Signup extends React.Component {
     constructor() {
@@ -205,9 +206,9 @@ class Customer_Signup extends React.Component {
                                         Already have an Account? |  
                                     </span>
                                     <label>
-                                        <a href='' >
+                                        <Link to='/customer/login' >
                                             | Login
-                                        </a>
+                                        </Link>
                                     </label>
                                 </div>
                             </div>

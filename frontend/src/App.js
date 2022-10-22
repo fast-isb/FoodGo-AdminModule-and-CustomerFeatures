@@ -1,25 +1,18 @@
 import logo from './logo.svg';
-import './App.css';
 import axios from 'axios'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Customer_Dashboard from './Customer_Dashboard.js';
+import Customer_Login from './Customer_Login.js';
+import Customer_Signup from './Customer_Signup.js';
+import Forget_Password from './Forget_Password.js';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <dev>
+      hellow World
+    </dev>
+    
   );
 }
 
