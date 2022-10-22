@@ -3,16 +3,9 @@ import React from 'react';
 import p1 from './slide3.webp'
 import p2 from './p3.png'
 import p3 from './slide1.jpg'
-import logout from './logout.svg'
-import person from './person.svg'
-import logo from './logo.png'
-import wallet from './wallet2.svg'
-import cart from './cart4.svg'
 import rest from './rest.jpeg'
-import home from './house.svg'
+import SideBar from './SideBar.js';
 import food from './food.jpg'
-import history from './clock-history.svg'
-import status from './status.png'
 import "./style.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
@@ -64,51 +57,7 @@ class Customer_Dashboard extends React.Component {
             <div>
                 <div className='container-fluid' >
                     <div className='row' id='fix' >
-                        <div className='col-auto min-vh-100 ' id='do'>
-                            <ul>
-                                <li>
-                                    <a className='nav-link px-2' id= 'icons'>
-                                        <i className='bi-house'/> <img className='ic' src={person}/>
-                                    </a>
-                                </li>
-                                <br />
-                                <li>
-                                    <a className='nav-link px-2' id= 'icons'>
-                                        <i className='bi-house'/> <img className='ic' src={cart}/>
-                                    </a>
-                                </li>
-                                <br />
-                                <li>
-                                    <a className='nav-link px-2' id= 'icons'>
-                                        <i className='bi-house'/> <img className='ic' src={status}/>
-                                    </a>
-                                </li>
-                                <br/>
-                                <li>
-                                    <a className='nav-link px-2' id= 'icons'>
-                                        <i className='bi-house'/> <img className='ic' src={home}/>
-                                    </a>
-                                </li>
-                                <br/>
-                                <li>
-                                    <a className='nav-link px-2' id= 'icons'>
-                                        <i className='bi-house'/> <img className='ic' src={wallet}/>
-                                    </a>
-                                </li>
-                                <br />
-                                <li>
-                                    <a className='nav-link px-2' id= 'icons'>
-                                        <i className='bi-house'/> <img className='ic' src={history}/>
-                                    </a>
-                                </li>
-                                <br/>
-                                <li>
-                                    <a className='nav-link px-2' id= 'icons' href='#'>
-                                        <i className='BsTextareaT'/> <img className='ic' src={logout}/>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <SideBar/>
                         <div className='col' id='para'>
                             <h2>
                                 How it Works
@@ -177,7 +126,7 @@ class Customer_Dashboard extends React.Component {
                                     <Carousel.Caption>
                                         <h5>FoodGo</h5>
                                         <p>
-                                            Your foodwould be deliver on your door step.
+                                            Your food would be deliver on your door step.
                                         </p>
                                     </Carousel.Caption>
                                 </Carousel.Item>

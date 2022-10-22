@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React from 'react';
-import signb from './signb.jpeg'
 import "./style.css";
 
 class Admin_Login extends React.Component {

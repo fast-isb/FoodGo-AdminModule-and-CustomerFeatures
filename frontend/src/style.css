@@ -181,19 +181,20 @@ h5{
     font-size:xx-large;
 }
 #do{
-    width: 80px;
+    width: 65px;
     border-radius:16px;
+    margin-left: -11px;
     position: fixed;
     bottom: 0;
     z-index: 1; 
-    border: 3px solid  rgba(200, 88, 155, 0.855);
+    border: 2.5px solid  rgba(200, 88, 155, 0.855);
     background-color: rgb(236, 236, 236);
 }
 #cosc{
     position: fixed;
 }
 #icons{
-    margin-left: -50px;
+    margin-left: -43px;
     color: rgb(230, 228, 228);
 }
 ul{
