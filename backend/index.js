@@ -9,7 +9,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
 //import { } from "dotenv/config";
-mongoose.connect('mongodb+srv://zain:Zain03047003007@cluster0.c2tcxc7.mongodb.net/?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://zain:Zain03047003007@cluster0.jafhv7i.mongodb.net/?retryWrites=true&w=majority',{
     useNewUrlParser: true,
 });
 

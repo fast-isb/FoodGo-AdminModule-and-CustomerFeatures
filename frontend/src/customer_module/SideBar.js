@@ -18,10 +18,6 @@ class SideBar extends React.Component {
         this.state = {
         } 
     }
-    onsubmit = e => {
-
-
-    }
 
     render() {
 

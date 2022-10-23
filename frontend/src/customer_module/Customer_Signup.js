@@ -26,6 +26,7 @@ class Customer_Signup extends React.Component {
     }
     
     onsubmit = async e => {
+        e.preventDefault();
         if (!(/\d/.test(this.state.fname))) {
             if (!(/\d/.test(this.state.lname))) {
                 if (/^\d+$/.test(this.state.phone)) {
@@ -46,13 +47,14 @@ class Customer_Signup extends React.Component {
                     const status= await axios.post('http://localhost:3001/customer/signup', signUpObject)
                     .then(res => {
                         if (res.data == 'exist') {
-                            e.preventDefault();
                             this.setState({
                                 mu:'This Username already exists'
                             })
                         }
                         else {
+                            
                             alert("Your Application has been submited! You can be able to login once admin approve your request")
+                            
                         }
                     })    
                 }
@@ -179,13 +181,13 @@ class Customer_Signup extends React.Component {
                                 <label id='errorMessage' className='erroeMessageGroup'>{this.state.mu} </label>  
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Password' required type='password' minlength="6" value={this.state.password} onChange={this.onChangePassword} />
+                                <input className='inputFieldsLarge' placeholder='Password' required type='password' minLength="6" value={this.state.password} onChange={this.onChangePassword} />
                                 <br />
                                 <br />
                                 <input className='inputFieldsLarge' placeholder='Email' required type='email' value={this.state.email} onChange={this.onChangeEmail} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Phone' required type='tel' minlength="11" maxlength="11" value={this.state.phone} onChange={this.onChangePhone} />
+                                <input className='inputFieldsLarge' placeholder='Phone' required type='tel' minLength="11" maxLength="11" value={this.state.phone} onChange={this.onChangePhone} />
                                 <label id='errorMessage' className='erroeMessageGroup'>{this.state.mph} </label>  
                                 <br />
                                 <br />

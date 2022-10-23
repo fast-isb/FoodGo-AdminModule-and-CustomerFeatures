@@ -4,9 +4,10 @@ import express, { json } from 'express';
 const router = express.Router();
 import customer from '../models/Customer.model.js'
 
-router.get('/', (req, res) => {
-    var cus = customer.find().
-    res.send(cu)
+router.get('/list', (req, res) => {
+    customer.find().then(customers => res.json(customers)).catch(() => {
+        res.send('could not be fatched')
+    })
     
 })
 
@@ -33,6 +34,7 @@ router.post('/signup', (req, res) => {
         userName,
         userPassword
     })
+    console.log(req.body)
     newCustomer.save().then(() => {
         res.json('sent')
     }).catch(() => {

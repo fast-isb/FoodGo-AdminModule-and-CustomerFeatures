@@ -11,6 +11,18 @@ img{
     width: 535px;
 }
 
+.continue{
+    background-color: rgba(13, 103, 17, 0.861);
+    color: white;
+    margin: 8px 0;
+    border: none;
+    margin-left: 590px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+    font-weight: bolder;
+}
 
 .formDiv{
     margin-left: 300px;

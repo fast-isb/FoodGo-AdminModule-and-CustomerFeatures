@@ -7,6 +7,7 @@ import Customer_Login from './customer_module/Customer_Login.js'
 import Forget_Password from './customer_module/Forget_Password.js'
 import Reset_Password from './customer_module/Reset_Password.js'
 import Admin_Login from './admin_module/Admin_Login.js'
+import Customer_Management from './admin_module/Customer_Management.js'
 import Customer_Dashboard from './customer_module/Customer_Dashboard.js'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -22,6 +23,7 @@ root.render(
         <Route path="/customer/forgetpassword" element={<Forget_Password />} />
         <Route path="/customer/resetpassword" element={<Reset_Password />} />
         <Route path="/admin/login" element={<Admin_Login />} />
+        <Route path="/admin/customermanagement" element={<Customer_Management />} />
       </Routes>
     </Router>
   </React.StrictMode>

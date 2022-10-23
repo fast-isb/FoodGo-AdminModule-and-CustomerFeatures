@@ -44,6 +44,10 @@ const customerSchema = new Schema({
         type: String,
         required: true,
     },
+    stats: {
+        type: String,
+        default: 'applied',
+    }
 
 }, {
     timestemos: true,
