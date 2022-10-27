@@ -8,7 +8,19 @@ router.get('/list', (req, res) => {
     customer.find().then(customers => res.json(customers)).catch(() => {
         res.send('could not be fatched')
     })
+})
+
+router.post('/getUser', (req, res) => {
     
+    const user = req.body.user
+    // console.log(req.body.user)
+    customer.find({userName: user}).then((customers) => {
+       // console.log(res.json(customers))
+        //console.log("dlckldac")
+        res.json(customers)
+    }).catch(() => {
+        console.log('could not be fatched')
+    })
 })
 
 router.post('/signup', (req, res) => {
@@ -34,7 +46,6 @@ router.post('/signup', (req, res) => {
         userName,
         userPassword
     })
-    console.log(req.body)
     newCustomer.save().then(() => {
         res.json('sent')
     }).catch(() => {
@@ -42,10 +53,6 @@ router.post('/signup', (req, res) => {
     })
 })
 
-router.post('/name', (req, res) => {
-    console.log(req.body);
-    res.json('name received');
-})
 
 export default router;
 

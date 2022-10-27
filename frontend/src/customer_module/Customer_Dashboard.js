@@ -54,7 +54,6 @@ class Customer_Dashboard extends React.Component {
     }
     
     render() {
-
         return (
             <div>
                 <div className='container-fluid' >

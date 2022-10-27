@@ -45,19 +45,34 @@ class Customer_Management extends React.Component {
         } 
     }
 
-    acceptapplication=async (user)=> {
-        const status = await axios.get('http://localhost:3001/customer/list').then(res => {
-            this.setState({
-                customers: this.state.customers.filter(element=>element.userName!=user)
-            })
+    acceptapplication = async (user) => {
+        var accepted
+        for (let index = 0; index < this.state.customers.length; index++) {
+            if (this.state.customers[index].userName==user) {
+                accepted = this.state.customers[index]
+            } 
+        }
+        this.setState({
+            customers: this.state.customers.filter(element=>element.userName!=user)
         })
+        //console.log(accepted._id)
+        const status = await axios.post('http://localhost:3001/admin/accept_appliaction',accepted).then(res => {
+            console.log(res.data)
+        }).catch(err => { console.log('error occured') })
     }
     rejectapplication=async (user)=> {
-        const status = await axios.get('http://localhost:3001/customer/list').then(res => {
-            this.setState({
-                customers: this.state.customers.filter(element=>element.userName!=user)
-            })
+        var rejected
+        for (let index = 0; index < this.state.customers.length; index++) {
+            if (this.state.customers[index].userName==user) {
+                rejected = this.state.customers[index]
+            } 
+        }
+        this.setState({
+            customers: this.state.customers.filter(element=>element.userName!=user)
         })
+        const status = await axios.post('http://localhost:3001/admin/reject_appliaction',rejected).then(res => {
+            console.log(res.data)
+        }).catch(err => { console.log('error occured') })
     }
     componentDidMount = async () => {
         const status = await axios.get('http://localhost:3001/customer/list')
@@ -69,7 +84,7 @@ class Customer_Management extends React.Component {
     }
     displayCustomerList = () => {
         return this.state.customers.map(temp => {
-            return <Trow customer={temp} method={this.acceptapplication} method2={ this. rejectapplication } key={ temp._id } />
+            return <Trow customer={temp} method={this.acceptapplication} method2={ this.rejectapplication } key={ temp._id } />
         })
     }
     render() {

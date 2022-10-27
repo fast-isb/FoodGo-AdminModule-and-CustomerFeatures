@@ -199,7 +199,7 @@ class Customer_Signup extends React.Component {
                                 </span>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Enter your city where you were born' required type='text' value={this.state.q1} onChange={this.onChangeQ1} />
+                                <input className='inputFieldsLarge' placeholder='Enter city where you were born' required type='text' value={this.state.q1} onChange={this.onChangeQ1} />
                                 <br />
                                 <br />
                                 <input className='inputFieldsLarge' placeholder='What was the name of your first pet' required type='text' value={this.state.q2} onChange={this.onChangeQ2} />

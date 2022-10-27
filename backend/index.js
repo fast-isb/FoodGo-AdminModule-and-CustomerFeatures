@@ -15,7 +15,9 @@ mongoose.connect('mongodb+srv://zain:Zain03047003007@cluster0.jafhv7i.mongodb.ne
 
 
 // Importing user route
-import router from './routes/customer.js';
+import customerRouter from './routes/customer.js';
+import adminRouter from './routes/admin.js';
+
 // const router = require('router')
 
 // const bodyParser = require('body-parser')
@@ -26,7 +28,8 @@ const port = 3001
 app.use(bodyParser.json())
 app.use(cors());
 // Adding a Router
-app.use('/customer', router);
+app.use('/customer', customerRouter);
+app.use('/admin', adminRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello Universe!')

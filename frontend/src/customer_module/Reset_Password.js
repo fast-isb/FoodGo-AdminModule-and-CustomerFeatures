@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import signb from '../images/signb.jpeg'
 import "../style.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 class Reset_Password extends React.Component {
     constructor() {
@@ -12,7 +13,7 @@ class Reset_Password extends React.Component {
             message: '',
         } 
     }
-    
+
     onsubmit = e => {
         e.preventDefault();
         if (this.state.password==this.state.confirmPassword) {
@@ -54,7 +55,6 @@ class Reset_Password extends React.Component {
                 <br />
                 <br />
                 <br />
-
                 <div className='resetDiv'>
                     <form onSubmit={this.onsubmit}>
                         <br />
