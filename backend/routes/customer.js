@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
         res.send('user could not be found')
     }
     else {
-        if (isFound[0].userPassword == req.body.userPassword) {
+        if (isFound[0].userPassword == req.body.userPassword && isFound[0].stats=='accepted') {
             const create_token = token.sign({userName: isFound[0].userName}, secret)
             if (res.status(201)) {
                 return res.json({ stat: 'success', tok: create_token })

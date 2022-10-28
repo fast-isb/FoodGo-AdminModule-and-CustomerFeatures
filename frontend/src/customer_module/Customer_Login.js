@@ -35,6 +35,11 @@ class Customer_Login extends React.Component {
                 window.localStorage.setItem("token", result.tok) 
                 window.location.href='/customer/dashboard'
             }
+            else {
+                this.setState({
+                    message: 'invalid information'
+                })
+            }
         }
     }
     onChangeUserName = e => {
