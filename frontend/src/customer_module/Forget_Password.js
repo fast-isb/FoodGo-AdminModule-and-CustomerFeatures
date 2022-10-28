@@ -1,27 +1,26 @@
 import axios from 'axios';
 import React from 'react';
 import signb from '../images/signb.jpeg'
+import { useState } from 'react';
 import "../style.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-
-class Forget_Password extends React.Component {
-    constructor() {
-        super()
-        this.state = {
+function Forget_Password(){
+        let navigate= useNavigate()
+        const [cust, setCust] = useState({
             userName: '',
             q1: '',
             q2: '',
             q3: '',
             error: '',
-        } 
-    }
+        }) 
     
     onsubmit = async e => {
 
         e.preventDefault();
         var obj = {
-            user: this.state.userName
+            user: cust.userName
         }
         var status = false
         var result
@@ -35,69 +34,122 @@ class Forget_Password extends React.Component {
             }
         }).catch(() => {
             console.log('error occured')
-            this.setState({
+            setCust({
+                q3: cust.q3,
+                userName: cust.userName,
+                q1: cust.q1,
+                q2: cust.q2,
                 error: "incorrect information"
             })
         })
 
         if (status==false) {
-            this.setState({
+            setCust({
+                q3: cust.q3,
+                userName: cust.userName,
+                q1: cust.q1,
+                q2: cust.q2,
                 error: "incorrect information"
             })
         }
         if (status==true) {
-            if (result.Q1==this.state.q1) {
-                if (result.Q2==this.state.q2) {
-                    if (result.Q3==this.state.q3) {
-                        
+            if (result.Q1==cust.q1) {
+                if (result.Q2==cust.q2) {
+                    if (result.Q3 == cust.q3) {
+                        if (result.stats == 'accepted') {
+                            navigate("/customer/reset", {
+                                state: {
+                                    userName: cust.userName,
+                                },
+                            });
+                        }
+                        else {
+                            setCust({
+                                q3: cust.q3,
+                                userName: cust.userName,
+                                q1: cust.q1,
+                                q2: cust.q2,
+                                error: "Your account has not been approved yet by Admin"
+                            })
+                        }
+                    
                     }
                     else {
-                        this.setState({
+                        setCust({
+                            q3: cust.q3,
+                            userName: cust.userName,
+                            q1: cust.q1,
+                            q2: cust.q2,
                             error: "incorrect information"
                         })
                     }
                 }
                 else {
-                    this.setState({
-                        error: "incorrect information"
+                    setCust({
+                        q3: cust.q3,
+                        userName: cust.userName,
+                        q1: cust.q1,
+                        q2: cust.q2,
+                        error: "incorrect information",
                     })
                 }
             }
             else {
-                this.setState({
+                setCust({
+                    q3: cust.q3,
+                    userName: cust.userName,
+                    q1: cust.q1,
+                    q2: cust.q2,
                     error: "incorrect information"
                 })
             }
         }  
     }
-    onChangeQ1 = e => {
-        this.setState({
-            q1: e.target.value
+    let onChangeQ1 = e => {
+        setCust({
+            userName: cust.userName,
+            q1: e.target.value,
+            q2: cust.q2,
+            q3: cust.q3,
+            error: cust.error
         })
     }
-    onChangeQ2 = e => {
-        this.setState({
+    let onChangeQ2 = e => {
+        setCust({
+            userName: cust.userName,
+            q1: cust.q1,
+            q3: cust.q3,
+            error: cust.error,
             q2: e.target.value
         })
     }
-    onChangeQ3 = e => {
-        this.setState({
-            q3: e.target.value
+    let onChangeQ3 = e => {
+        setCust({
+            q3: e.target.value,
+            userName: cust.userName,
+            q1: cust.q1,
+            q2: cust.q2,
+            error: cust.error
         })
     }
-    onChangeuserName = e => {
-        this.setState({
-            userName: e.target.value
+    let onChangeuserName = e => {
+        setCust({
+            userName: e.target.value,
+            q1: cust.q1,
+            q2: cust.q2,
+            q3: cust.q3,
+            error: cust.error
         })
     }
-    render() {
-        const myStyle={
+    const myStyle={
             backgroundImage: `url(${signb})` ,
             height:'100vh',
             fontSize:'50px',
             backgroundSize: 'cover',
-        };
-        return (
+    }
+    return (
+        
+        
             <div style={myStyle}>
                 <br />
                 <br />
@@ -106,7 +158,7 @@ class Forget_Password extends React.Component {
                 <br/>
 
                 <div className='forgetDiv'>
-                    <form onSubmit={this.onsubmit}>
+                    <form onSubmit={onsubmit}>
                         <br />
                         <div className='forgetPass'>
                             Forget Password?
@@ -115,7 +167,7 @@ class Forget_Password extends React.Component {
                             <div className='innerdiv'>
                                 <br />
                                 <br />
-                                <input className='inputFields' placeholder='User Name' required type='text' value={this.state.userName} onChange={this.onChangeuserName} />
+                                <input className='inputFields' placeholder='User Name' required type='text' value={cust.userName} onChange={onChangeuserName} />
                                 <br />
                                 <br />
                                 <span className='info'>
@@ -123,15 +175,15 @@ class Forget_Password extends React.Component {
                                 </span>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Enter city where you were born' required type='text' value={this.state.q1} onChange={this.onChangeQ1} />
+                                <input className='inputFieldsLarge' placeholder='Enter city where you were born' required type='text' value={cust.q1} onChange={onChangeQ1} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='What was the name of your first pet' required type='text' value={this.state.q2} onChange={this.onChangeQ2} />
+                                <input className='inputFieldsLarge' placeholder='What was the name of your first pet' required type='text' value={cust.q2} onChange={onChangeQ2} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Who was your favourite school teacher' required type='text' value={this.state.q3} onChange={this.onChangeQ3} />
+                                <input className='inputFieldsLarge' placeholder='Who was your favourite school teacher' required type='text' value={cust.q3} onChange={onChangeQ3} />
                                 <br />
-                                <label id='errorMessage' className='erroeMessageGroup'>{this.state.error} </label>  
+                                <label id='errorMessage' className='erroeMessageGroup'>{cust.error} </label>  
                                 <br />
                                 <br/>
                                 <input className='signupButton' type='submit' value='Continue' />
@@ -164,7 +216,7 @@ class Forget_Password extends React.Component {
                 </div>
             </div>
         );
-    }
+   
 }
  
 export default Forget_Password;

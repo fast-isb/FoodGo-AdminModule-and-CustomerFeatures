@@ -24,6 +24,7 @@ root.render(
         <Route path="/customer/resetpassword" element={<Reset_Password />} />
         <Route path="/admin/login" element={<Admin_Login />} />
         <Route path="/admin/customermanagement" element={<Customer_Management />} />
+        <Route path="/customer/reset" element={<Reset_Password />} />
       </Routes>
     </Router>
   </React.StrictMode>

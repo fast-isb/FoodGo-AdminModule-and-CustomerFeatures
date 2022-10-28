@@ -53,6 +53,19 @@ router.post('/signup', (req, res) => {
     })
 })
 
+router.post('/resetPassword', (req, res) => {
+    var required = {
+        userName: req.body.userName
+    }
+    var temp = req.body
+    temp.userPassword = req.body.Password
+    customer.updateOne(required, temp).then(() => {
+        res.json('Password has been changed Successfully!')
+    }).catch(() => {
+        res.json('there was an error while changing password')
+    })
+})
+
 
 export default router;
 
