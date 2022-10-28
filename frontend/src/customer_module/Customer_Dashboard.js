@@ -23,7 +23,20 @@ class Customer_Dashboard extends React.Component {
             username: '',
             password: '',
             message: '',
+            logedin: '',
         } 
+    }
+    componentDidMount = async () => {
+        var result
+        const tokenObj = {
+            token: window.localStorage.getItem("token")
+        }
+        var result = await axios.post('http://localhost:3001/customer/fetch-user-after-login', tokenObj)
+        console.log(result.data);
+        this.setState({
+            logedin: result.data
+        })
+        window.localStorage.clear()
     }
     onsubmit = e => {
        // e.preventDefault();

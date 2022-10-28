@@ -3,7 +3,8 @@ import express, { json } from 'express';
 // const express = require('express');
 const router = express.Router();
 import customer from '../models/Customer.model.js'
-
+import token from 'jsonwebtoken'
+const secret='adnjkb2hf9hfjb()!#E+!#e?><":"{|wcwec}{{}}{|}DC"Wcewc?>WE<C"_P_+WEcwcqwcqw23'
 router.get('/list', (req, res) => {
     customer.find().then(customers => res.json(customers)).catch(() => {
         res.send('could not be fatched')
@@ -21,6 +22,49 @@ router.post('/getUser', (req, res) => {
     }).catch(() => {
         console.log('could not be fatched')
     })
+})
+
+
+router.post('/login', async (req, res) => {
+    
+    const user = req.body.userName
+    var isFound = await customer.find({ userName: user })
+    if (!isFound) {
+        res.send('user could not be found')
+    }
+    else {
+        if (isFound[0].userPassword == req.body.userPassword) {
+            const create_token = token.sign({userName: isFound[0].userName}, secret)
+            if (res.status(201)) {
+                return res.json({ stat: 'success', tok: create_token })
+                
+            }
+            else {
+                return res.json('error occured')
+            }
+        }
+        else {
+            res.send('error')
+        }
+    }
+    
+    
+})
+
+
+router.post('/fetch-user-after-login', async (req, res) => {
+    const istoken = req.body.token
+    try {
+        const customers = token.verify(istoken, secret)
+        const user = customers.userName
+        customer.find({userName: user}).then((customers) => {
+            res.json(customers)
+        }).catch(() => {
+            console.log('could not be fatched')
+        }) 
+    } catch (error) {
+        
+    }
 })
 
 router.post('/signup', (req, res) => {

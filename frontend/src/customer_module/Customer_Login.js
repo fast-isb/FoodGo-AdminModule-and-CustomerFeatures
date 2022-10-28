@@ -15,8 +15,8 @@ class Customer_Login extends React.Component {
             message: '',
         } 
     }
-    onsubmit = e => {
-       // e.preventDefault();
+    onsubmit = async e => {
+        e.preventDefault();
         if (this.state.username!=null && this.state.password!=null) {
          
             const loginObject = {
@@ -24,11 +24,17 @@ class Customer_Login extends React.Component {
                 userPassword: this.state.password,
             }
             //console.log(this.state.name);
-
-            axios.post('http://localhost:3001/users/login', loginObject)
+            var result
+            await axios.post('http://localhost:3001/customer/login', loginObject)
             .then(res => {
                 console.log(res.data)
+                result= res.data
             })
+            console.log(result.stat)
+            if (result.stat == 'success') {
+                window.localStorage.setItem("token", result.tok) 
+                window.location.href='/customer/dashboard'
+            }
         }
     }
     onChangeUserName = e => {
