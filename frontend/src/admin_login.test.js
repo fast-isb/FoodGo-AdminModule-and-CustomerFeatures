@@ -12,7 +12,7 @@ test("log in Button", () => {
         render(<MemoryRouter>
             <Admin_Log />
         </MemoryRouter>)
-    const Admin_LogBtton = screen.queryByTestId("chechLog");
+    const Admin_LogBtton = screen.getByTestId("chechLog");
     waitFor(() => expect(getByTestId(Admin_LogBtton)).toBeInTheDocument());
 })
 
@@ -21,13 +21,13 @@ test("f3", () => {
         render(<MemoryRouter>
             <Admin_Log />
         </MemoryRouter>)
-    const f3 = screen.queryByTestId("uname");
+    const f3 = screen.getByTestId("uname");
     waitFor(() => expect(getByTestId(f3)).toBeInTheDocument());
 })
 test("f4", () => {
         render(<MemoryRouter>
             <Admin_Log />
         </MemoryRouter>)
-    const f5 = screen.queryByTestId("pass");
+    const f5 = screen.getByTestId("pass");
     waitFor(() => expect(getByTestId(f5)).toBeInTheDocument());
 })
