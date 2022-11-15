@@ -76,15 +76,15 @@ class Admin_Login extends React.Component {
                             <div className='innerdiv'>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.username} onChange={this.onChangeUserName} />
+                                <input data-testid='uname' className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.username} onChange={this.onChangeUserName} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Password' required type='password' value={this.state.password} onChange={this.onChangePassword} />
+                                <input data-testid='pass' className='inputFieldsLarge' placeholder='Password' required type='password' value={this.state.password} onChange={this.onChangePassword} />
                                 <br />
                                 <br />
                                 <label id='errorMessage'>{this.state.message} </label>  
                                 <br/>
-                                <input className='signupButton' type='submit' value='Log In' />
+                                <input data-testid='chechLog' className='signupButton' type='submit' value='Log In' />
                             </div>
                         </div>
                     </form>
