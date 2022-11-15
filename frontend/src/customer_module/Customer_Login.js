@@ -92,15 +92,15 @@ class Customer_Login extends React.Component {
                             <div className='innerdiv'>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.username} onChange={this.onChangeUserName} />
+                                <input data-testid='uname' className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.username} onChange={this.onChangeUserName} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Password' required type='password' value={this.state.password} onChange={this.onChangePassword} />
+                                <input data-testid='pass' className='inputFieldsLarge' placeholder='Password' required type='password' value={this.state.password} onChange={this.onChangePassword} />
                                 <br />
                                 <br />
                                 <label id='errorMessage'>{this.state.message} </label>  
                                 <br/>
-                                <input className='signupButton' type='submit' value='Log In' />
+                                <input data-testid='checklogin' className='signupButton' type='submit' value='Log In' />
                                 <br />
                                 <br />
                                 <div className='loginText'>
@@ -108,7 +108,7 @@ class Customer_Login extends React.Component {
                                         Can't Log in? | 
                                     </span>
                                     <label>
-                                        <Link to='/customer/forgetpassword' >
+                                        <Link data-testid='forget' to='/customer/forgetpassword' >
                                             | Forget Password
                                         </Link>
                                     </label>
@@ -119,7 +119,7 @@ class Customer_Login extends React.Component {
                                         Don't have an Account? | 
                                     </span>
                                     <label>
-                                        <Link  to='/customer/signup' >
+                                        <Link  data-testid='sign' to='/customer/signup' >
                                             | Sign Up
                                         </Link>
                                     </label>

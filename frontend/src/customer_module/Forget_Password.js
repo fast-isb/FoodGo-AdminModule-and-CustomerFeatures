@@ -16,7 +16,7 @@ function Forget_Password(){
             error: '',
         }) 
     
-    onsubmit = async e => {
+    let onsubmit = async e => {
 
         e.preventDefault();
         var obj = {
@@ -167,7 +167,7 @@ function Forget_Password(){
                             <div className='innerdiv'>
                                 <br />
                                 <br />
-                                <input className='inputFields' placeholder='User Name' required type='text' value={cust.userName} onChange={onChangeuserName} />
+                                <input data-testid='uname' className='inputFields' placeholder='User Name' required type='text' value={cust.userName} onChange={onChangeuserName} />
                                 <br />
                                 <br />
                                 <span className='info'>
@@ -175,18 +175,18 @@ function Forget_Password(){
                                 </span>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Enter city where you were born' required type='text' value={cust.q1} onChange={onChangeQ1} />
+                                <input data-testid='q1' className='inputFieldsLarge' placeholder='Enter city where you were born' required type='text' value={cust.q1} onChange={onChangeQ1} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='What was the name of your first pet' required type='text' value={cust.q2} onChange={onChangeQ2} />
+                                <input data-testid='q2' className='inputFieldsLarge' placeholder='What was the name of your first pet' required type='text' value={cust.q2} onChange={onChangeQ2} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Who was your favourite school teacher' required type='text' value={cust.q3} onChange={onChangeQ3} />
+                                <input data-testid='q3' className='inputFieldsLarge' placeholder='Who was your favourite school teacher' required type='text' value={cust.q3} onChange={onChangeQ3} />
                                 <br />
                                 <label id='errorMessage' className='erroeMessageGroup'>{cust.error} </label>  
                                 <br />
                                 <br/>
-                                <input className='signupButton' type='submit' value='Continue' />
+                                <input data-testid='contBut' className='signupButton' type='submit' value='Continue' />
                                 <br />
                                 <br />
                                 <div className='loginText'>
@@ -194,7 +194,7 @@ function Forget_Password(){
                                         Do You Want to Login Now? | 
                                     </span>
                                     <label>
-                                        <Link to='/customer/login'  >
+                                        <Link data-testid='log' to='/customer/login'  >
                                             | Log In
                                         </Link>
                                     </label>
@@ -205,7 +205,7 @@ function Forget_Password(){
                                         Don't have an Account? | 
                                     </span>
                                     <label>
-                                        <Link to='/customer/signup' >
+                                        <Link data-testid='sign' to='/customer/signup' >
                                             | Sign Up
                                         </Link>
                                     </label>
