@@ -169,29 +169,29 @@ class Customer_Signup extends React.Component {
                                 </span>
                                 <br />
                                 <br />
-                                <input className='inputFields' placeholder='First Name' required type='text' value={this.state.fname} onChange={this.onChangefname} />
+                                <input data-testid='fname' className='inputFields' placeholder='First Name' required type='text' value={this.state.fname} onChange={this.onChangefname} />
                                 <label id='errorMessage' className='erroeMessageGroup'>{this.state.mf} </label>  
                                 <br />
                                 <br />
-                                <input className='inputFields' placeholder='Last Name' required type='text' value={this.state.lname} onChange={this.onChangelname} />
+                                <input data-testid='lname' className='inputFields' placeholder='Last Name' required type='text' value={this.state.lname} onChange={this.onChangelname} />
                                 <label id='errorMessage' className='erroeMessageGroup'>{this.state.ml} </label>  
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.username} onChange={this.onChangeUserName} />
+                                <input data-testid='uname'  className='inputFieldsLarge' placeholder='User Name' required type='text' value={this.state.username} onChange={this.onChangeUserName} />
                                 <label id='errorMessage' className='erroeMessageGroup'>{this.state.mu} </label>  
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Password' required type='password' minLength="6" value={this.state.password} onChange={this.onChangePassword} />
+                                <input data-testid='pass'  className='inputFieldsLarge' placeholder='Password' required type='password' minLength="6" value={this.state.password} onChange={this.onChangePassword} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Email' required type='email' value={this.state.email} onChange={this.onChangeEmail} />
+                                <input  data-testid='email'  className='inputFieldsLarge' placeholder='Email' required type='email' value={this.state.email} onChange={this.onChangeEmail} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Phone' required type='tel' minLength="11" maxLength="11" value={this.state.phone} onChange={this.onChangePhone} />
+                                <input data-testid='phone'  className='inputFieldsLarge' placeholder='Phone' required type='tel' minLength="11" maxLength="11" value={this.state.phone} onChange={this.onChangePhone} />
                                 <label id='errorMessage' className='erroeMessageGroup'>{this.state.mph} </label>  
                                 <br />
                                 <br />
-                                <input className='inputFieldsAdd' placeholder='Address' required type='text' value={this.state.address} onChange={this.onChangeAddress} />
+                                <input data-testid='address' className='inputFieldsAdd' placeholder='Address' required type='text' value={this.state.address} onChange={this.onChangeAddress} />
                                 <br />
                                 <br />
                                 <span className='info'>
@@ -199,16 +199,16 @@ class Customer_Signup extends React.Component {
                                 </span>
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Enter city where you were born' required type='text' value={this.state.q1} onChange={this.onChangeQ1} />
+                                <input data-testid='q1'  className='inputFieldsLarge' placeholder='Enter city where you were born' required type='text' value={this.state.q1} onChange={this.onChangeQ1} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='What was the name of your first pet' required type='text' value={this.state.q2} onChange={this.onChangeQ2} />
+                                <input  data-testid='q2'  className='inputFieldsLarge' placeholder='What was the name of your first pet' required type='text' value={this.state.q2} onChange={this.onChangeQ2} />
                                 <br />
                                 <br />
-                                <input className='inputFieldsLarge' placeholder='Who was your favourite school teacher' required type='text' value={this.state.q3} onChange={this.onChangeQ3} />
+                                <input data-testid='q3' className='inputFieldsLarge' placeholder='Who was your favourite school teacher' required type='text' value={this.state.q3} onChange={this.onChangeQ3} />
                                 <br />
                                 <br />
-                                <input className='signupButton' type='submit' value='Sign UP' />
+                                <input data-testid='checkSignBut' className='signupButton' type='submit' value='Sign UP' />
                                 <br />
                                 <br />
                                 <div className='loginText'>
@@ -216,7 +216,7 @@ class Customer_Signup extends React.Component {
                                         Already have an Account? |  
                                     </span>
                                     <label>
-                                        <Link to='/customer/login' >
+                                        <Link data-testid='logcheck' to='/customer/login' >
                                             | Login
                                         </Link>
                                     </label>
